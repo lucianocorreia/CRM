@@ -1,0 +1,53 @@
+﻿@model CorreiaNetCRM.Models.Usuario
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>Usuario</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Nome)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Nome)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Login)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Login)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Senha)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Senha)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Ativo)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Ativo)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.UltimoAcesso)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.UltimoAcesso)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

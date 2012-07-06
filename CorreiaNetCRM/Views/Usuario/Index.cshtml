@@ -1,0 +1,51 @@
+﻿@model IEnumerable<CorreiaNetCRM.Models.Usuario>
+@using CorreiaNetCRM.Lib.Extensions
+@using PagedList;
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Cadastro de Usuários</h2>
+
+<p>
+    @Html.ActionLink("Novo", "Create")
+    @Html.TextBox("Pesquisar", "Search...")
+</p>
+<table id="data-table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nome)
+        </th>
+        <th style="width: 230px">
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th style="width: 100px">
+            @Html.DisplayNameFor(model => model.Login)
+        </th>
+        <th style="width: 60px">
+            @Html.DisplayNameFor(model => model.Ativo)
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr onclick="location.href = '@(Url.Action("Edit", "Usuario", new { id = item.UsuarioId }))'">
+            <td>
+                @Html.DisplayFor(modelItem => item.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Login)
+            </td>
+            <td style="text-align: center">
+                @Html.DisplayFor(modelItem => item.Ativo)
+            </td>
+        </tr>
+    }
+</table>
+
+
+
+@Html.PagedListPagerDefault((IPagedList)Model, page => Url.Action("Index", new { page = page }))
