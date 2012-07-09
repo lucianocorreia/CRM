@@ -228,6 +228,8 @@
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="HTML_Layout\index.css" />
+    <Content Include="HTML_Layout\index.html" />
     <Content Include="Images\Edit\delete.gif" />
     <Content Include="Images\Edit\edit.png" />
     <Content Include="Images\table\Thumbs.db" />
